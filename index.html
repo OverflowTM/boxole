@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f3ee" />
+    <meta
+      name="description"
+      content="Meet boxole. A tactile lighting console. Explore the design in 3D and make the finish your own."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      try {
+        const saved = localStorage.getItem("boxole.theme.v1");
+        document.documentElement.dataset.theme = ["light", "dark"].includes(
+          saved,
+        )
+          ? saved
+          : matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <title>boxole — light, in your hands.</title>
+    <script type="module" crossorigin src="./assets/index-jo1ZeZVw.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/config-D_4I8aDt.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CWDdzYig.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#configurator">Skip to configurator</a>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="boxole home"
+        >boxole<span class="brand-dot" aria-hidden="true"></span
+      ></a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">overview</a
+        ><a href="#configurator">configure <span>↗</span></a
+        ><a href="#details">the details</a>
+      </nav>
+      <span class="header-note mono">independent lighting instruments</span
+      ><button
+        id="theme-toggle"
+        class="theme-toggle mono"
+        type="button"
+        aria-label="Switch to dark theme"
+        aria-pressed="false"
+      >
+        <span id="theme-icon" aria-hidden="true">◐</span
+        ><span id="theme-label">dark mode</span>
+      </button>
+    </header>
+    <main>
+      <section class="presentation" id="overview" aria-labelledby="title">
+        <div id="configurator" class="journey-anchor" aria-hidden="true"></div>
+        <div id="details" class="journey-anchor" aria-hidden="true"></div>
+        <div class="presentation-pin">
+          <div class="presentation-titles">
+            <div class="presentation-intro">
+              <p class="eyebrow mono">
+                <span class="status-dot"></span>boxole / 01 — lighting console
+              </p>
+              <h1 id="title">light, in your hands.</h1>
+              <p class="presentation-description">
+                Less between you and the light.
+              </p>
+            </div>
+            <div class="presentation-overhead" aria-hidden="true">
+              <p class="eyebrow mono">02 / a different perspective</p>
+              <h2>A place for every move.</h2>
+              <p class="presentation-description">
+                Ten channels. Everything within reach.
+              </p>
+            </div>
+            <div class="presentation-details" aria-hidden="true">
+              <h2 id="assembly-title">Inside boxole.</h2>
+              <p class="presentation-description">
+                The console, layer by layer.
+              </p>
+            </div>
+          </div>
+          <div class="product-stage presentation-stage" id="product-stage">
+            <div
+              id="viewer"
+              tabindex="-1"
+              role="region"
+              aria-label="Boxole lighting console"
+            ></div>
+            <div id="loading" class="loading" role="status">
+              <span class="loading-mark" aria-hidden="true">b.</span
+              ><span id="loading-label" class="mono"
+                >preparing your console</span
+              ><span class="loading-line"></span>
+            </div>
+            <div id="viewer-fallback" class="viewer-fallback" hidden>
+              <img
+                src="./panel-drawing.svg"
+                alt="Original boxole control panel drawing"
+              />
+              <p>
+                3D is unavailable in this browser. You can still explore the
+                panel drawing and configure your finish.
+              </p>
+            </div>
+          </div>
+          <aside
+            class="config-panel"
+            id="colour-panel"
+            inert
+            aria-hidden="true"
+            aria-label="Console colours"
+          >
+            <form id="configuration-form">
+              <fieldset>
+                <legend>
+                  <span class="step-number mono">01</span> enclosure
+                  <span id="enclosure-value" class="selection-name">chalk</span>
+                </legend>
+                <div class="swatches" id="enclosure-options"></div>
+              </fieldset>
+              <fieldset>
+                <legend>
+                  <span class="step-number mono">02</span> controls
+                  <span id="controls-value" class="selection-name"
+                    >graphite</span
+                  >
+                </legend>
+                <div class="swatches" id="controls-options"></div>
+              </fieldset>
+              <fieldset>
+                <legend>
+                  <span class="step-number mono">03</span> light & accent
+                  <span id="accent-value" class="selection-name"
+                    >signal orange</span
+                  >
+                </legend>
+                <div class="swatches" id="accent-options"></div>
+              </fieldset>
+            </form>
+            <div class="configuration-footer">
+              <div class="configuration-code mono">
+                <span>your edition</span
+                ><span id="edition-code">CH / GR / OR</span>
+              </div>
+              <button id="save-config" type="button" class="primary-button">
+                save your configuration <span aria-hidden="true">↓</span>
+              </button>
+              <div class="secondary-actions">
+                <button id="copy-link" type="button">
+                  copy configuration link ↗</button
+                ><button id="reset-config" type="button">reset</button>
+              </div>
+            </div>
+          </aside>
+          <section
+            class="assembly-details"
+            aria-labelledby="assembly-title"
+            inert
+            aria-hidden="true"
+          >
+            <div class="assembly-side assembly-left">
+              <article>
+                <h3>Control surface</h3>
+                <p>
+                  Ten 100 mm faders, ten rotary encoders, and a 30-key matrix
+                  sit alongside a joystick, jog wheel, and display.
+                </p>
+              </article>
+              <article>
+                <h3>Control mechanisms</h3>
+                <p>
+                  Below the faceplate, motors move the faders and switches
+                  register each key press.
+                </p>
+              </article>
+            </div>
+            <div class="assembly-side assembly-right">
+              <article>
+                <h3>Circuit boards</h3>
+                <p>
+                  Separate boards serve the faders, keys, upper controls, and
+                  display.
+                </p>
+              </article>
+              <article>
+                <h3>Housing and connections</h3>
+                <p>
+                  The housing carries rear USB-C, Ethernet, and DMX connections.
+                </p>
+              </article>
+            </div>
+          </section>
+          <div class="presentation-footer">
+            <span class="mono presentation-footnote"
+              >a tactile instrument for light.</span
+            ><a class="scroll-cue mono" href="#configurator"
+              ><span id="presentation-cue">scroll to discover</span
+              ><span class="scroll-arrow" aria-hidden="true">↓</span></a
+            ><span class="mono presentation-chapter"
+              ><span id="presentation-chapter">01</span
+              ><span class="chapter-line" aria-hidden="true"></span>04</span
+            >
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="wordmark" href="#overview"
+        >boxole<span class="brand-dot" aria-hidden="true"></span></a
+      ><span class="mono footer-tagline"
+        >independent lighting instruments / B—01</span
+      ><span class="mono muted footer-year">design study / 2026</span
+      ><button id="open-drawing" class="footer-drawing" type="button">
+        view panel drawing <span aria-hidden="true">↗</span>
+      </button>
+    </footer>
+    <dialog id="drawing-dialog" aria-labelledby="drawing-dialog-title">
+      <div class="dialog-header">
+        <h2 id="drawing-dialog-title">The control panel.</h2>
+        <button
+          id="close-drawing"
+          class="icon-button"
+          aria-label="Close panel drawing"
+        >
+          ×
+        </button>
+      </div>
+      <img
+        src="./panel-drawing.svg"
+        alt="Original console v1 panel schematic: 562 by 320 millimetres, ten faders, ten encoders, keypad, joystick, jog wheel, and display. Concept drawing, not released for manufacture."
+      />
+      <div class="dialog-footer">
+        <span class="mono muted">original design / concept v1</span
+        ><a href="./panel-drawing.svg" download="boxole-panel-drawing.svg"
+          >download SVG ↓</a
+        >
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
